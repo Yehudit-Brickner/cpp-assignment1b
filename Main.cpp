@@ -35,7 +35,7 @@ int main(){
             char c= distr(eng);
             char d= distr(eng);
             try{
-                cout<< "rows  "<< nums1[j]<< "  columns  " << nums1[i]<<endl;
+                cout<< "rows  "<< nums1[j]<< "  columns  " << nums1[i]<<"  first synmbol  " << c<< "  second symbol  "<< d<< endl;
                 cout << ariel::mat(nums1[i],nums1[j],c,d) <<endl; 
             }
             catch (exception& ex) {
@@ -50,7 +50,7 @@ int main(){
             char c= distr(eng);
             char d= distr(eng);
             try{
-                cout<< "rows  "<< nums2[j]<< "  columns  " << nums2[i]<<endl;
+                cout<< "rows  "<< nums2[j]<< "  columns  " << nums2[i]<<"  first synmbol  " << c<< "  second symbol  "<< d<<endl;
                 cout << ariel::mat(nums2[i],nums2[j],c,d) <<endl; 
             }
             catch (exception& ex) {
