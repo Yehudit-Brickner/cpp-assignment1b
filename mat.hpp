@@ -7,10 +7,10 @@ using namespace std;
  
 
 namespace ariel{
-    string mat(int a, int b, char c, char d);
-	string matreg(int a, int b, char c, char d);
-    string matlong(int a, int b, char c, char d);
-    string matsame(int a, int b, char c);
+    string mat(int columns, int rows, char symb1, char symb2);
+	string matreg(int columns, int rows, char symb1, char symb2);
+    string matlong(int columns, int rows, char symb1, char symb2);
+    string matsame(int columns, int rows, char symb1);
 }
 
 
