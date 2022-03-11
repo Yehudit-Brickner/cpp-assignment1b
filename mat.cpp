@@ -8,18 +8,18 @@ using namespace ariel;
 
 
 
-string ariel::matsame(int columns, int rows, char c){
+string ariel::matsame(int columns, int rows, char symb1){
     /*
     we will create the string ans.
     we will create a nested for loop.
     the outer loop representing the rows and the inner loop the columns.
-    we will add the char to the string the amount of column times and than add '\n'.
+    we will add symb1 to the string the amount of column times and than add '\n'.
     and repeat till we create a string representing the whole rug.
     */
     string ans;
     for (int j=0;j<rows; j++){ // rows
         for (int i=0; i< columns; i++){ // columns
-        ans.push_back(c);
+        ans.push_back(symb1);
         }
          ans.append("\n");
     }
@@ -28,7 +28,7 @@ string ariel::matsame(int columns, int rows, char c){
 }
 
 
-string ariel::matreg( int columns, int rows, char c, char d){
+string ariel::matreg( int columns, int rows, char symb1, char symb2){
     
     /*
     we will create an vector of chars the length of the matrix.
@@ -37,20 +37,20 @@ string ariel::matreg( int columns, int rows, char c, char d){
     int colhalf= half the columns lower value.
     int counter= 1
     string ans
-    we will initiate the vector with all values being  char c.
+    we will initiate the vector with all values being symb1.
     we will create a nested for loop.
     the outer loop representing the rows and the inner loop the columns.
     we will go through the vector, 
-    if the value is c we will add the first char to the string else we will add the second char to the string.
+    if the value is symb1 we will add the first char to the string else we will add symb2 to the string.
     we will add '\n' to the string, and then update the array.
     if the row is smaller the half the rows
         then we check if the row is odd or even.
         in both cases we will create a for loop from the counter, to (the amount of columns - counter)
-                if it is even we will change the value to d.
-                if it is odd we will change the value to c.
+                if it is even we will change the value to symb2.
+                if it is odd we will change the value to symb1.
     else we will decremenrt the counter
         then create a for loop from counter to (the amount of columns - counter)
-        if the vector is d we will change to c, and if t is c we will change to d.
+        if the vector is symb2 we will change to symb1, and if it is symb1 we will change to symb2.
     */
     
     
@@ -62,16 +62,16 @@ string ariel::matreg( int columns, int rows, char c, char d){
     string ans;
 
     for (int i=0; i< columns; i++){
-        v.push_back(c);
+        v.push_back(symb1);
     }
 
     for (int j=0;j<rows; j++){ // rows
         for (int i=0; i< columns; i++){ // columns
-            if(v.at(i)==c){
-                ans.push_back(c);
+            if(v.at(i)==symb1){
+                ans.push_back(symb1);
             }
             else{
-                ans.push_back(d);
+                ans.push_back(symb2);
             }
         }
         ans.append("\n");
@@ -79,12 +79,12 @@ string ariel::matreg( int columns, int rows, char c, char d){
 
             if(j%2==0){
                 for (int k= counter; k<columns-counter;k++){
-                    v.at(k)=d;
+                    v.at(k)=symb2;
                 }
             }
             else{
                 for (int k= counter; k<columns-counter;k++){
-                    v.at(k)=c;
+                    v.at(k)=symb1;
                 } 
             }
             counter++;
@@ -92,11 +92,11 @@ string ariel::matreg( int columns, int rows, char c, char d){
         else{
             counter--;
             for( int k=counter; k<columns-counter;k++){
-                if(v.at(k)==d){
-                    v.at(k)=c;
+                if(v.at(k)==symb2){
+                    v.at(k)=symb1;
                 }
                 else{ 
-                    v.at(k)=d;
+                    v.at(k)=symb2;
                 } 
             }
         }
@@ -106,7 +106,7 @@ string ariel::matreg( int columns, int rows, char c, char d){
 
 
 
-string ariel::matlong(int columns, int rows, char c, char d){
+string ariel::matlong(int columns, int rows, char symb1, char symb2){
     
     /*
     we will create an vectors of chars the length of the matrix.
@@ -115,20 +115,20 @@ string ariel::matlong(int columns, int rows, char c, char d){
     int colhalf= half the columns lower value.
     int counter= colhalf
     string ans
-    we will initiate the vector with the char c.
+    we will initiate the vector with symb1.
     we will create a nested for loop.
     the outer loop representing the rows and the inner loop the columns.
     we will go through the vector, 
-    if the value is c we will add the first char to the string else we will add the second char to the string.
+    if the value is symb1 we will add the first char to the string else we will add symb2 to the string.
     we will add '\n' to the string, and then update the array.
     if the row is smaller or equal to half the columns of bigger or equal to (the amout of columns - half the columns -1).
         if the row is smaller the half the rows
             then we check if the row is odd or even.
             in both cases we will create a for loop from the row+1, to (the amount of columns - the row -1)
-                if it is even we will change the value to d.
-                if it is odd we will change the value to c.
+                if it is even we will change the value to symb2.
+                if it is odd we will change the value to symb1.
         else we will do a for loop from counter to (the amount of columns -counter)
-        if the value is d we will change to c and if c we change to d.
+        if the value is symb2 we will change to symb1 and if symb1 we will change to symb2.
         than we will decrease the counter by 1.
     else we dont need to change what is added to the string because the rug is a much longer than it is wide. 
     */
@@ -143,15 +143,15 @@ string ariel::matlong(int columns, int rows, char c, char d){
     string ans;
 
     for (int i=0; i< columns; i++){
-        v.push_back(c);
+        v.push_back(symb1);
     }
     for (int j=0;j<rows; j++){ // rows
        for (int i=0; i< columns; i++){ // columns
-            if(v.at(i)==c){
-                ans.push_back(c);
+            if(v.at(i)==symb1){
+                ans.push_back(symb1);
             }
             else{
-                ans.push_back(d);
+                ans.push_back(symb2);
             }
         }
     ans.append("\n");
@@ -159,22 +159,22 @@ string ariel::matlong(int columns, int rows, char c, char d){
             if(j<rowhalf){
                 if(j%2==0){
                     for (int k= j+1; k<columns-j-1;k++){
-                        v.at(k)=d;
+                        v.at(k)=symb2;
                     }
                 }
                 else{
                     for (int k= j+1; k<columns-j-1;k++){
-                        v.at(k)=c;
+                        v.at(k)=symb1;
                     }
                 }
             }
             else{
                 for (int y=counter; y< columns-counter;y++){
-                    if(v.at(y)==d){
-                       v.at(y)=c;
+                    if(v.at(y)==symb2){
+                       v.at(y)=symb1;
                     }
                     else{
-                        v.at(y)=d;
+                        v.at(y)=symb2;
                     }
                 }
                 counter--;                  
@@ -186,7 +186,7 @@ string ariel::matlong(int columns, int rows, char c, char d){
 
 
 
-string ariel::mat(int columns, int rows, char c, char d){
+string ariel::mat(int columns, int rows, char symb1, char symb2){
     /*
     
     we will check for all reasons the function shoudnt run and throw exceptions.
@@ -205,22 +205,22 @@ string ariel::mat(int columns, int rows, char c, char d){
             throw std::invalid_argument( "Mat size is always odd" );
         }
        
-        if(c==' ' || c=='\n' || c=='\r' || c=='\t' ||d==' ' || d=='\n' || d=='\r' || d=='\t'){
+        if(symb1==' ' || symb1=='\n' || symb1=='\r' || symb1=='\t' ||symb2==' ' || symb2=='\n' || symb2=='\r' || symb2=='\t'){
             throw std::invalid_argument( "invalid symbol" );
         }
-        if(c < 33 || d<33 || c>126 || d>126){
+        if(symb1 < 33 || symb2<33 || symb1>126 || symb2>126){
             throw std::invalid_argument( "invalid symbol" );
         }
         
-        if(c==d){
-            return matsame(columns,rows,c);
+        if(symb1==symb2){
+            return matsame(columns,rows,symb1);
         }    
         
         if(columns+4>rows){
-            return matreg(columns,rows,c,d);
+            return matreg(columns,rows,symb1,symb2);
         }
         
-        return matlong(columns,rows,c,d);
+        return matlong(columns,rows,symb1,symb2);
 
 }
 
