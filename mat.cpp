@@ -208,6 +208,9 @@ string ariel::mat(int columns, int rows, char c, char d){
         if(c==' ' || c=='\n' || c=='\r' || c=='\t' ||d==' ' || d=='\n' || d=='\r' || d=='\t'){
             throw std::invalid_argument( "invalid symbol" );
         }
+        if(c < 33 || d<33 || c>126 || d>126){
+            throw std::invalid_argument( "invalid symbol" );
+        }
         
         if(c==d){
             return matsame(columns,rows,c);
