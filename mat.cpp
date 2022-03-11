@@ -194,6 +194,9 @@ string ariel::mat(int columns, int rows, char symb1, char symb2){
     else we will check if the matrix is a long matrix or regular matrix.
     we need to know if it is long so that we can repeat the middle row as long as needed.
     */
+
+    int smallest = ' ';
+    int biggest = '~';
    
         if(columns==0 || rows==0){
             throw std::invalid_argument( "size of row or column is 0" );
@@ -208,7 +211,7 @@ string ariel::mat(int columns, int rows, char symb1, char symb2){
         if(symb1==' ' || symb1=='\n' || symb1=='\r' || symb1=='\t' ||symb2==' ' || symb2=='\n' || symb2=='\r' || symb2=='\t'){
             throw std::invalid_argument( "invalid symbol" );
         }
-        if(symb1 < 33 || symb2<33 || symb1>126 || symb2>126){
+        if(symb1 < smallest || symb2<smallest || symb1>biggest || symb2>biggest){
             throw std::invalid_argument( "invalid symbol" );
         }
         
