@@ -215,7 +215,7 @@ string ariel::mat(int columns, int rows, char symb1, char symb2){
             throw std::invalid_argument( "invalid symbol" );
         }
         
-        if(symb1==symb2){
+        if(symb1==symb2 || rows ==1 || columns==1){
             return matsame(columns,rows,symb1);
         }    
         
