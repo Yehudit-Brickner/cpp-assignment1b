@@ -41,39 +41,45 @@ int main(){
                 cout << ariel::mat(nums2[i],nums2[j],symb1,symb2) <<endl; 
             }
             catch (exception& ex) {
-	 	        cout << "   caught exception: " << ex.what() << endl;  
+	 	        cout << "   caught exception: " << ex.what() << endl;  // if an exception is cought it will be an illegal symbol
 	        }
         }
-    } 
+    }
 
-            try{
-                cout<< "rows  "<< 4<< "  columns  " << 7<<endl;
-                cout << ariel::mat(7,4,'#','/') <<endl;  // contains even should throw an error
-            }
-            catch (exception& ex) {
-	 	        cout << "   caught exception: " << ex.what() << endl;  
-	        }
-            try{
-                cout<< "rows  "<< 0<< "  columns  " << 7<<endl;
-                cout << ariel::mat(7,0,'#','/') <<endl; // contains 0 should throw an error
-            }
-            catch (exception& ex) {
-	 	        cout << "   caught exception: " << ex.what() << endl;  
-	        }
-            try{
-                cout<< "rows  "<< -5<< "  columns  " << 7<<endl;
-                cout << ariel::mat(7,-5,'#','/') <<endl; // contains negative should throw an error
-            }
-            catch (exception& ex) {
-	 	        cout << "   caught exception: " << ex.what() << endl;  
-	        }
-             try{
-                cout<< "rows  "<< 7<< "  columns  " << 7<<endl;
-                cout << ariel::mat(7,7,' ','/') <<endl; // contains illegal symbol should throw an error
-            }
-            catch (exception& ex) {
-	 	        cout << "   caught exception: " << ex.what() << endl;  
-	        }
+    cout<< "rows  "<< 4<< "  columns  " << 7<<endl;
+    cout << ariel::mat(7,5,'#','#') <<endl; // same symbol 
+
+    try{
+        cout<< "rows  "<< 4<< "  columns  " << 7<<endl;
+        cout << ariel::mat(7,4,'#','/') <<endl;  // contains even should throw an error
+    }
+    catch (exception& ex) {
+        cout << "   caught exception: " << ex.what() << endl;  
+    }
+    
+    try{
+        cout<< "rows  "<< 0<< "  columns  " << 7<<endl;
+        cout << ariel::mat(7,0,'#','/') <<endl; // contains 0 should throw an error
+    }
+    catch (exception& ex) {
+        cout << "   caught exception: " << ex.what() << endl;  
+    }
+    
+    try{
+        cout<< "rows  "<< -5<< "  columns  " << 7<<endl;
+        cout << ariel::mat(7,-5,'#','/') <<endl; // contains negative should throw an error
+    }
+    catch (exception& ex) {
+        cout << "   caught exception: " << ex.what() << endl;  
+    }
+   
+    try{
+        cout<< "rows  "<< 7<< "  columns  " << 7<<endl;
+        cout << ariel::mat(7,7,' ','/') <<endl; // contains illegal symbol should throw an error
+    }
+    catch (exception& ex) {
+        cout << "   caught exception: " << ex.what() << endl;  
+    }
 
             
 
