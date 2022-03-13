@@ -21,7 +21,7 @@ string ariel::matsame(int columns, int rows, char symb1){
         for (int i=0; i< columns; i++){ // columns
         ans.push_back(symb1);
         }
-         ans.append("\n");
+        ans.push_back('\n');
     }
     return ans;
    
@@ -74,7 +74,7 @@ string ariel::matreg( int columns, int rows, char symb1, char symb2){
                 ans.push_back(symb2);
             }
         }
-        ans.append("\n");
+        ans.push_back('\n');
         if(j<rowhalf){
 
             if(j%2==0){
@@ -154,7 +154,7 @@ string ariel::matlong(int columns, int rows, char symb1, char symb2){
                 ans.push_back(symb2);
             }
         }
-    ans.append("\n");
+    ans.push_back('\n');
         if (j<colhalf || j>= rows-colhalf-1){ // if not in this range we dont need to change what is printed
             if(j<rowhalf){
                 if(j%2==0){
@@ -211,19 +211,19 @@ string ariel::mat(int columns, int rows, char symb1, char symb2){
         if(symb1==' ' || symb1=='\n' || symb1=='\r' || symb1=='\t' ||symb2==' ' || symb2=='\n' || symb2=='\r' || symb2=='\t'){
             throw std::invalid_argument( "invalid symbol" );
         }
-        if(symb1 < smallest || symb2<smallest || symb1>biggest || symb2>biggest){
+        if(symb1<smallest || symb2<smallest || symb1>biggest || symb2>biggest){
             throw std::invalid_argument( "invalid symbol" );
         }
         
-        if(symb1==symb2 || rows ==1 || columns==1){
+        if(symb1==symb2 || rows==1 || columns==1){ // the mat will only be 1 symbol
             return matsame(columns,rows,symb1);
         }    
         
-        if(columns+4>rows){
-            return matreg(columns,rows,symb1,symb2);
+        if(columns+4>rows){ 
+            return matreg(columns,rows,symb1,symb2); // the rug is almost an square/square/wide
         }
         
-        return matlong(columns,rows,symb1,symb2);
+        return matlong(columns,rows,symb1,symb2); // the rug is longer than it is wide
 
 }
 
