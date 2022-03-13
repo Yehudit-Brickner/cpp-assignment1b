@@ -1,40 +1,29 @@
 #include <iostream>
 #include <stdexcept>
-// #include <ctime>
+#include <ctime>
 #include <random>
+// #include<cstdlib>
 // #include <string>
 // #include <vector>
 #include "mat.hpp"
 using namespace std;
-// using namespace ariel;
 
-// namespace ariel{
-//     string mat(int columns, int rows, char symb1, char symb2);
-// 	string matreg(int columns, int rows, char symb1, char symb2);
-//     string matlong(int columns, int rows, char symb1, char symb2);
-//     string matsame(int columns, int rows, char symb1);
-// }
 
 
 int main(){   
 
-    
+    time_t curr_time;
+    srand(curr_time);
 
-    std::random_device rd;
-    std::default_random_engine eng(rd());
-    std::uniform_int_distribution<int> distr(32, 126);
-    char c= distr(eng);
-    cout << c<< endl;
 
     int nums1[] ={1,3,5};
-    
     for (int i=0; i<3;i++){
         for (int j=0; j<3;j++){
-            char c= distr(eng);
-            char d= distr(eng);
+            char symb1= rand() % 94+32;
+            char symb2= rand() % 94+32;
             try{
-                cout<< "rows  "<< nums1[j]<< "  columns  " << nums1[i]<<"  first synmbol  " << c<< "  second symbol  "<< d<< endl;
-                cout << ariel::mat(nums1[i],nums1[j],c,d) <<endl; 
+                cout<< "rows  "<< nums1[j]<< "  columns  " << nums1[i]<<"  first synmbol  " << symb1<< "  second symbol  "<< symb2<< endl;
+                cout << ariel::mat(nums1[i],nums1[j],symb1,symb2) <<endl; 
             }
             catch (exception& ex) {
 	 	        cout << "   caught exception: " << ex.what() << endl;  
@@ -45,11 +34,11 @@ int main(){
     int nums2[] ={13,23,85};
     for (int i=0; i<3;i++){
         for (int j=0; j<3;j++){
-            char c= distr(eng);
-            char d= distr(eng);
+            char symb1= rand() % 94+32;
+            char symb2= rand() % 94+32;
             try{
-                cout<< "rows  "<< nums2[j]<< "  columns  " << nums2[i]<<"  first synmbol  " << c<< "  second symbol  "<< d<<endl;
-                cout << ariel::mat(nums2[i],nums2[j],c,d) <<endl; 
+                cout<< "rows  "<< nums2[j]<< "  columns  " << nums2[i]<<"  first synmbol  " << symb1<< "  second symbol  "<< symb2<<endl;
+                cout << ariel::mat(nums2[i],nums2[j],symb1,symb2) <<endl; 
             }
             catch (exception& ex) {
 	 	        cout << "   caught exception: " << ex.what() << endl;  
@@ -86,21 +75,7 @@ int main(){
 	 	        cout << "   caught exception: " << ex.what() << endl;  
 	        }
 
-            int row ='a';
-            int col = 'c';
-            cout<< "rows  "<< row << "  columns  " << col <<endl;
-            cout << ariel::mat(col,row,'*','/') <<endl; 
             
-
-
-         
-
-
-
-
-   
-
-
 
     return 0;
 }
